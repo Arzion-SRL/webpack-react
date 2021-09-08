@@ -49,17 +49,6 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             PRODUCTION: JSON.stringify(true),
-            BACKEND_URL: JSON.stringify('https://api.myshop4.com'),
-            MANAGER_URL: JSON.stringify('https://app.myshop4.com'),
-            CATALOG_URL: JSON.stringify('https://myshop4.com'),
-            WEBSITE_URL: JSON.stringify('https://www.myshop4.com'),
-            FEATURE_IMAGE: JSON.stringify('https://dnhkjla6wv45e.cloudfront.net/destacados_wide.png'),
-            REFRESH_TOKEN_INTERVAL : JSON.stringify(29),
-            SESSION_EXPIRE_TIME    : JSON.stringify(900000),
-            API_URL_OPENSTREETMAP  : JSON.stringify('https://nominatim.openstreetmap.org'),
-            RECAPTCHA_KEY          : JSON.stringify('6LezIHcaAAAAANR7-E1bDROgX-d4PG28pNpZmwsr'),
-            RECAPTCHA_THRESHOLD_SCORE: JSON.stringify(0.5),
-            MAX_FILE_SIZE_MB          : JSON.stringify(10),
         }),
     ],
     optimization: {

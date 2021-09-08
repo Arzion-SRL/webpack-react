@@ -51,16 +51,6 @@ module.exports = {
         new HtmlWebpackPlugin({ template: './public/index.ejs' }),
         new webpack.DefinePlugin({
             PRODUCTION                : JSON.stringify(false),
-            BACKEND_URL               : JSON.stringify('http://localhost:5000'),
-            MANAGER_URL               : JSON.stringify('http://localhost:8000'),
-            CATALOG_URL               : JSON.stringify('http://localhost:9000'),
-            WEBSITE_URL               : JSON.stringify('https://myshop4.com'),
-            API_URL_OPENSTREETMAP     : JSON.stringify('https://nominatim.openstreetmap.org'),
-            RECAPTCHA_KEY             : JSON.stringify('6LezIHcaAAAAANR7-E1bDROgX-d4PG28pNpZmwsr'),
-            REFRESH_TOKEN_INTERVAL    : JSON.stringify(29),
-            SESSION_EXPIRE_TIME       : JSON.stringify(900000),
-            RECAPTCHA_THRESHOLD_SCORE : JSON.stringify(0.5),
-            MAX_FILE_SIZE_MB          : JSON.stringify(10),
         }),
     ],
 };
