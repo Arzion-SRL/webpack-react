@@ -1,0 +1,110 @@
+// ELEVATION ////////////
+@elevation-color-picker: rgb(148, 171, 194);
+@elevation-color: 148, 171, 194;
+
+.elevation(@level: '0px') {
+    & when (@level = '0px') {
+        box-shadow: 0 0 0 0 rgba(@elevation-color, .2);
+    }
+    // switch, card (resting), navbar (resting)
+    & when (@level = '1px') {
+        box-shadow: 0 2px 1px -1px rgba(@elevation-color, .2),
+            0 1px 1px 0 rgba(@elevation-color, .14),
+            0 1px 3px 0 rgba(@elevation-color, .12);
+    }
+    // raised button (resting)
+    & when (@level = '2px') {
+        box-shadow: 0 3px 1px -2px rgba(@elevation-color, .2),
+            0 2px 2px 0 rgba(@elevation-color, .14),
+            0 1px 5px 0 rgba(@elevation-color, .12);
+    }
+    // navbar (scolling, resting), raised button (hover)
+    & when (@level = '4px') {
+        box-shadow: 0 2px 4px -1px rgba(@elevation-color, .2),
+            0 4px 5px 0 rgba(@elevation-color, .14),
+            0 1px 10px 0 rgba(@elevation-color, .12);
+    }
+    // snackbar, fab
+    & when (@level = '6px') {
+        box-shadow: 0 3px 5px -1px rgba(@elevation-color, .2),
+            0 6px 10px 0 rgba(@elevation-color, .14),
+            0 1px 18px 0 rgba(@elevation-color, .12);
+    }
+    // raised button (pressed), card (hover), menu/dropdowns
+    & when (@level = '8px') {
+        box-shadow: 0 5px 5px -3px rgba(@elevation-color, .2),
+            0 8px 10px 1px rgba(@elevation-color, .14),
+            0 3px 14px 2px rgba(@elevation-color, .12);
+    }
+    // sidenav (opened), modal
+    & when (@level = '16px') {
+        box-shadow: 0 8px 10px -5px rgba(@elevation-color, .2),
+            0 16px 24px 2px rgba(@elevation-color, .14),
+            0 6px 30px 5px rgba(@elevation-color, .12)
+    }
+    // dialogs
+    & when (@level = '24px') {
+        box-shadow: 0 11px 15px -7px rgba(@elevation-color, .2),
+            0 24px 38px 3px rgba(@elevation-color, .14),
+            0 9px 46px 8px rgba(@elevation-color, .12);
+    }
+}
+
+// BUTTONS ////////////
+.button-color(@background, @color, @color-hover) {
+    background-color: @background;
+    color: @color;
+
+    .ri-icon {
+        use { fill: @color; }
+    }
+
+    &:hover,
+    &:focus {
+        background-color: lighten(@background, 5%);
+        color: @color-hover;
+
+        .ri-icon {
+            use { fill: @color-hover; }
+        }
+    }
+}
+
+.button-outlined-color(@color) {
+    background-color: transparent;
+    color: @color;
+    box-shadow: inset 0 0 0 2px @color;
+
+    .ri-icon {
+        use { fill: @color; }
+    }
+
+    &:hover,
+    &:focus {
+        background-color: fadeout(@color, 90%);
+        color: @color;
+
+        .ri-icon {
+            use { fill: @color; }
+        }
+    }
+}
+
+.button-text-color(@color) {
+    background-color: transparent;
+    color: @color;
+
+    .ri-icon {
+        use { fill: @color; }
+    }
+
+    &:hover,
+    &:focus {
+        background-color: tint(@color, 90%);
+        color: @color;
+
+        .ri-icon {
+            use { fill: @color; }
+        }
+    }
+}

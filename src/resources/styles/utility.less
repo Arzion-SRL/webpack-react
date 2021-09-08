@@ -1,0 +1,377 @@
+////////////////
+//  UTILITY  //
+//////////////
+// CLEARFIX HACK //////////////////////////
+.clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.clearfix {
+    &::before {
+        content: "";
+        display: table-cell;
+    }
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+/* Clearfix for block elements */
+.clearfix-block { overflow: hidden; }
+
+.clearfix-block-alt {
+    display: table-cell;
+    width: 10000px;
+}
+
+// FLOAT //////////////////////////
+.float-left { float: left; }
+.float-right { float: right; }
+
+/* Prevent float on small devices */
+[class*='float-'] { max-width: 100%; }
+
+// VERTICAL ALIGNMENT //////////////////////////
+.vertical-align {
+    font-size: 0;
+    &::before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+}
+
+.vertical-align-top,
+.vertical-align-middle,
+.vertical-align-bottom {
+    display: inline-block;
+    max-width: 100%;
+    font-size: @font-size;
+}
+
+.vertical-align-top { vertical-align: top; }
+.vertical-align-middle { vertical-align: middle; }
+.vertical-align-bottom { vertical-align: bottom; }
+
+// Height
+.height-100 { height: 100%; }
+.height-50 { height: 50%; }
+
+// Vieport height
+.viewport-height { height: 100vh; }
+.viewport-min-height { min-height: 100vh; }
+.viewport-max-height { max-height: 100vh; }
+
+// MARGINS //////////////////////////
+/* Default */
+.margin { margin: @margin; }
+* + .margin { margin: @margin !important; }
+.margin-top { margin-top: @margin !important; }
+.margin-bottom { margin-bottom: @margin !important; }
+.margin-left { margin-left: @margin !important; }
+.margin-right { margin-right: @margin !important; }
+
+/* Small */
+.margin-small { margin: @margin-small; }
+* + .margin-small { margin: @margin-small !important; }
+.margin-top-small { margin-top: @margin-small !important; }
+.margin-bottom-small { margin-bottom: @margin-small !important; }
+.margin-left-small { margin-left: @margin-small !important; }
+.margin-right-small { margin-right: @margin-small !important; }
+
+/* Medium */
+.margin-medium { margin: @margin-medium; }
+* + .margin-medium { margin: @margin-medium !important; }
+.margin-top-medium { margin-top: @margin-medium !important; }
+.margin-bottom-medium { margin-bottom: @margin-medium !important; }
+.margin-left-medium { margin-left: @margin-medium !important; }
+.margin-right-medium { margin-right: @margin-medium !important; }
+
+/* Large */
+.margin-large { margin: @margin-large; }
+* + .margin-large { margin: @margin-large !important; }
+.margin-top-large { margin-top: @margin-large !important; }
+.margin-bottom-large { margin-bottom: @margin-large !important; }
+.margin-left-large { margin-left: @margin-large !important; }
+.margin-right-large { margin-right: @margin-large !important; }
+
+/* xLarge */
+.margin-xlarge { margin: @margin-xlarge; }
+* + .margin-xlarge { margin: @margin-xlarge !important; }
+.margin-top-xlarge { margin-top: @margin-xlarge !important; }
+.margin-bottom-xlarge { margin-bottom: @margin-xlarge !important; }
+.margin-left-xlarge { margin-left: @margin-xlarge !important; }
+.margin-right-xlarge { margin-right: @margin-xlarge !important; }
+
+// PADDINGS //////////////////////////
+/* Default */
+.padding { padding: @padding; }
+* + .padding { padding: @padding !important; }
+.padding-top { padding-top: @padding !important; }
+.padding-bottom { padding-bottom: @padding !important; }
+.padding-left { padding-left: @padding !important; }
+.padding-right { padding-right: @padding !important; }
+
+/* Small */
+.padding-small { padding: @padding-small; }
+* + .padding-small { padding: @padding-small !important; }
+.padding-top-small { padding-top: @padding-small !important; }
+.padding-bottom-small { padding-bottom: @padding-small !important; }
+.padding-left-small { padding-left: @padding-small !important; }
+.padding-right-small { padding-right: @padding-small !important; }
+
+/* Medium */
+.padding-medium { padding: @padding-medium; }
+* + .padding-medium { padding: @padding-medium !important; }
+.padding-top-medium { padding-top: @padding-medium !important; }
+.padding-bottom-medium { padding-bottom: @padding-medium !important; }
+.padding-left-medium { padding-left: @padding-medium !important; }
+.padding-right-medium { padding-right: @padding-medium !important; }
+
+/* Large */
+.padding-large { padding: @padding-large; }
+* + .padding-large { padding: @padding-large !important; }
+.padding-top-large { padding-top: @padding-large !important; }
+.padding-bottom-large { padding-bottom: @padding-large !important; }
+.padding-left-large { padding-left: @padding-large !important; }
+.padding-right-large { padding-right: @padding-large !important; }
+
+/* xLarge */
+.padding-xlarge { padding: @padding-xlarge; }
+* + .padding-xlarge { padding: @padding-xlarge !important; }
+.padding-top-xlarge { padding-top: @padding-xlarge !important; }
+.padding-bottom-xlarge { padding-bottom: @padding-xlarge !important; }
+.padding-left-xlarge { padding-left: @padding-xlarge !important; }
+.padding-right-xlarge { padding-right: @padding-xlarge !important; }
+
+// REMOVE MARGINS/PADDINGS //////////////////////////
+/* Margin */
+.margin-remove { margin: 0 !important; }
+.margin-remove-top { margin-top: 0 !important; }
+.margin-remove-left { margin-left: 0 !important; }
+.margin-remove-right { margin-right: 0 !important; }
+.margin-remove-bottom { margin-bottom: 0 !important; }
+.margin-remove-adjacent + * { margin-top: 0 !important; }
+
+.margin-remove-horizontal {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.margin-remove-vertical {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Padding */
+.padding-remove { padding: 0 !important; }
+.padding-remove-top { padding-top: 0 !important; }
+.padding-remove-left { padding-left: 0 !important; }
+.padding-remove-right { padding-right: 0 !important; }
+.padding-remove-bottom { padding-bottom: 0 !important; }
+
+.padding-remove-horizontal {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.padding-remove-vertical {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+// POSITIONS //////////////////////////
+.position-relative { position: relative !important; }
+
+.position-absolute,
+[class*='position-top'],
+[class*='position-bottom'] {
+    position: absolute !important;
+}
+
+.position-fixed { position: fixed !important; }
+
+.position-sticky {
+    position: sticky !important;
+    position: -webkit-sticky !important;
+    // If the element to add sticky is inside a flexbox container, we need to set the align to work
+    align-self: flex-start;
+}
+
+.position-top {
+    top: 0;
+    width: 100%;
+}
+
+.position-bottom {
+    bottom: 0;
+    width: 100%;
+}
+
+.position-top-left {
+    top: 0;
+    left: 0;
+}
+
+.position-top-right {
+    top: 0;
+    right: 0;
+}
+
+.position-bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.position-bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.position-cover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+// RESPONSIVE ELEMENTS //////////////////////////
+.responsive-height {
+    max-height: 100%;
+    width: auto;
+    max-width: none;
+}
+
+.responsive-width {
+    max-width: 100% !important;
+    height: auto;
+}
+
+.width-auto { width: auto; }
+
+.width-expand {
+    width: 1px;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    min-width: 0;
+    flex-basis: 1px;
+}
+
+/* Reset */
+.link-reset,
+.link-reset a,
+.link-reset:hover,
+.link-reset a:hover,
+.link-reset:focus,
+.link-reset a:focus {
+    color: inherit;
+    text-decoration: none;
+}
+
+// OVERFLOW //////////////////////////
+.overflow-auto {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    > :last-child { margin-bottom: 0; }
+}
+
+.overflow-hidden { overflow: hidden; }
+
+// DISPLAY //////////////////////////
+.display-block { display: block !important; }
+.display-inline { display: inline !important; }
+.display-inline-block { display: inline-block !important; }
+
+// VISIBILITY //////////////////////////
+[hidden],
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.invisible { visibility: hidden !important; }
+
+.visible { visibility: visible !important; }
+
+/* Visible elements to screen sizes */
+@media (min-width: @breakpoint-small) {
+    .visible\@s { display: none !important; }
+}
+
+@media (min-width: @breakpoint-medium) {
+    .visible\@m { display: none !important; }
+}
+
+@media (min-width: @breakpoint-large) {
+    .visible\@l { display: none !important; }
+}
+
+@media (min-width: @breakpoint-xlarge) {
+    .visible\@xl { display: none !important; }
+}
+
+@media (max-width: @breakpoint-xsmall-max) {
+    .hidden\@s { display: none !important; }
+}
+
+@media (max-width: @breakpoint-small-max) {
+    .hidden\@m { display: none !important; }
+}
+
+@media (max-width: @breakpoint-medium-max) {
+    .hidden\@l { display: none !important; }
+}
+
+@media (max-width: @breakpoint-large-max) {
+    .hidden\@xl { display: none !important; }
+}
+
+/* Show on hover */
+.visible-toggle:not(:hover) .hidden-hover { display: none !important }
+.visible-toggle:not(:hover) .invisible-hover { visibility: hidden !important }
+
+// RESIZE //////////////////////////
+.resize { resize: both; }
+.resize-vertical { resize: vertical; }
+
+// CLEARS /////////////////////////
+.clear-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+// SORTABLE //////////////////////
+.sortable-wrapper,
+.sortable-item {
+    .clear-ul();
+}
+
+.sortable-item {
+    z-index: @sortable-item-z-index;
+    background: @sortable-item-background;
+    .elevation(@sortable-item-elevation);
+    padding: @sortable-item-padding;
+
+    + .sortable-item { margin-top: @sortable-item-plus-item-marign-top; }
+
+    .sortable-handle {
+        margin-right: @sortable-item-handle-margin-right;
+        vertical-align: bottom;
+        cursor: grab;
+
+        use { fill: @sortable-item-handle-color; }
+    }
+}

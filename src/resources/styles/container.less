@@ -1,0 +1,42 @@
+//////////////////
+//  CONTAINER  //
+////////////////
+.container {
+    box-sizing: content-box;
+    max-width: @container-max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: @container-padding;
+    padding-right: @container-padding;
+    .clearfix;
+
+    /* Phone landscape and bigger */
+    @media (min-width: @breakpoint-small) {
+        padding-left: @container-padding-small;
+        padding-right: @container-padding-small;
+    }
+
+    /* Tablet landscape and bigger */
+    @media (min-width: @breakpoint-medium) {
+        padding-left: @container-padding-medium;
+        padding-right: @container-padding-medium;
+    }
+
+    > :last-child { margin-bottom: 0; }
+
+    /* Remove nested padding */
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Size */
+    &.container-xsmall { max-width: @container-max-width-xsmall; }
+    &.container-small { max-width: @container-max-width-small; }
+    &.container-large { max-width: @container-max-width-large; }
+    &.container-fluid { max-width: unset; }
+
+    @media (min-width: @breakpoint-large) {
+        &.container-small { max-width: @container-max-width; }
+    }
+}

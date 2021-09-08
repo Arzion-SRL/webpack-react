@@ -31,6 +31,7 @@ module.exports = {
         alias      : {
             '~app'        : path.resolve(APP_DIR),
             '~components' : path.resolve(APP_DIR, 'library/components/'),
+            '~utils' : path.resolve(APP_DIR, 'library/utils/'),
         },
     },
 };

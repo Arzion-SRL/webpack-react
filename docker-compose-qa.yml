@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  hestia_manager:
+    build:
+      context: ./
+      dockerfile: ./development/Dockerfile
+    ports:
+      - 8443:443
+      - 8080:80

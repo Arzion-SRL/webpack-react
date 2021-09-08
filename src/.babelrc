@@ -1,0 +1,35 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "node": "current"
+                }
+            }
+        ],
+        [
+            "@babel/preset-react", {
+                "runtime": "automatic"
+            }
+        ]
+    ],
+    "plugins": [
+        [
+            "module-resolver",
+            {
+                "root": [
+                    "./src"
+                ],
+                "alias": {
+                    "~components": "./src/library/components",
+                    "~utils": "./src/library/utils"
+                }
+            }
+        ],["@babel/plugin-transform-runtime", {
+            "regenerator": true
+        }],
+        ["@babel/plugin-syntax-dynamic-import"],
+        ["@babel/plugin-proposal-class-properties"]
+    ]
+}
